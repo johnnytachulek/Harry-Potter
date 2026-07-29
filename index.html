@@ -187,5 +187,17 @@ O epílogo mostra dezenove anos depois, Harry, Gina, Ron e Hermione estão na es
          style="width: 420px; height: 236px; object-fit: contain; border-radius: 8px;">
     <figcaption style="margin-top: 8px; font-weight: bold; text-align: center;">Croton capitatus - nome popular Hogwort</figcaption>
   </figure>
+</div>
 
-  </div>
+<button>💖<span>0</span></button>
+</main>
+</body>
+  <script>
+     const botao = document.querySelector("button");
+     botao.addEventListener("click", botaoClicado);
+     function botaoClicado() {
+     let texto = botao.querySelector("span");
+     texto.textContent++;
+}
+  </script>
+</html>
