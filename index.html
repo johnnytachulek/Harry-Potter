@@ -195,16 +195,26 @@ O epílogo mostra dezenove anos depois, Harry, Gina, Ron e Hermione estão na es
 </body>
 
 <script>
-    const botoes = document.querySelectorAll("button");
-     
-    botoes.forEach( function(botao){
-botao.addEventListener("click", botaoClicado);
+const botoes = document.querySelectorAll("button");
 
-function botaoClicado() {
-console.log("fui clicado");
-let texto = botao.querySelector("span");
-texto.textContent++;
-}
+botoes.forEach(function(botao, index) {
+    let valorSalvo = localStorage.getItem("contador_botao_" + index);
+    if (valorSalvo !== null) {
+        let texto = botao.querySelector("span");
+        texto.textContent = valorSalvo;
+    }
+    botao.addEventListener("click", function() {
+        botaoClicado(botao, index);
+    });
 });
+
+function botaoClicado(botao, index) {
+    console.log("fui clicado");
+    let texto = botao.querySelector("span");
+    texto.textContent++;
+    localStorage.setItem("contador_botao_" + index, texto.textContent);
+}
+
 </script>
+
 </html>
